@@ -18,7 +18,7 @@
  *    shallowCopy({}) => {}
  */
 function shallowCopy(obj) {
-  return Object.assign({}, obj || {});
+  return { ...obj };
 }
 
 /**
@@ -62,7 +62,7 @@ function mergeObjects(objects) {
  *
  */
 function removeProperties(obj, keys) {
-  const result = Object.assign({}, obj);
+  const result = { ...obj };
   keys.forEach((key) => {
     if (Object.prototype.hasOwnProperty.call(obj, key)) {
       delete result[key];
